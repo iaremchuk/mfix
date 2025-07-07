@@ -1,5 +1,5 @@
 const Services = () => {
-    return(
+    return (
         <h4>Services</h4>
     )
 }
