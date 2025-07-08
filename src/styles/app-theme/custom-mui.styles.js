@@ -13,17 +13,17 @@ import palette from './app.pallete'
 // import { select } from './app.select'
 
 export const theme = createTheme({
-  palette
-//   typography: appTypography,
-//   components: {
-//     MuiSvgIcon: svgIcon,
-//     MuiButton: button,
-//     MuiCheckbox: checkbox,
-//     MuiTextField: textField,
-//     MuiSelect: select,
-//     MuiTooltip: tooltip,
-//     MuiMenuItem: menuItem,
-//     MuiMenu: menuList,
-//     MuiTableRow: table
-//   }
+  palette,
+  //   typography: appTypography,
+  //   components: {
+  //     MuiSvgIcon: svgIcon,
+  //     MuiButton: button,
+  //     MuiCheckbox: checkbox,
+  //     MuiTextField: textField,
+  //     MuiSelect: select,
+  //     MuiTooltip: tooltip,
+  //     MuiMenuItem: menuItem,
+  //     MuiMenu: menuList,
+  //     MuiTableRow: table
+  //   }
 })
