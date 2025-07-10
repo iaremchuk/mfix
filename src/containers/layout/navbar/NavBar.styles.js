@@ -1,0 +1,21 @@
+import palette from '~/styles/app-theme/app.pallete'
+
+export const styles = {
+    navList: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    navBarItem: (isActive, inDrawer = false) => ({
+        color: isActive ? palette.companyBlue[400] : 'primary.900',
+        display: inDrawer ? 'block' : { xs: 'none', md: 'block' },
+        textDecoration: 'none',
+        textTransform: 'upperCase',
+        '&:hover': {
+            color: 'primary.400'
+        },
+        '&:focus': {
+            color: palette.companyBlue[400]
+        }
+    })
+}
