@@ -6,11 +6,10 @@ export const styles = {
         alignItems: 'center',
         justifyContent: 'space-between'
     },
-    navBarItem: (isActive, inDrawer = false) => ({
+    navBarItem: (isActive) => ({
         color: isActive ? palette.companyBlue[400] : 'primary.900',
-        display: inDrawer ? 'block' : { xs: 'none', md: 'block' },
         textDecoration: 'none',
-        textTransform: 'upperCase',
+        textTransform: 'uppercase',
         '&:hover': {
             color: 'primary.400'
         },

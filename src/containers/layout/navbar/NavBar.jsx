@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
@@ -11,49 +11,41 @@ import Logo from '~/containers/logo/Logo'
 
 import { styles } from '~/containers/layout/navbar/NavBar.styles.js'
 import AppDrawer from '~/components/app-drawer/AppDrawer'
+import NavLink from '~/components/naw-link/NavLink'
 
 const Navbar = () => {
-  const { pathname } = useLocation()
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const theme = useTheme()
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
+  const renderNavLinks = (isDrawer = false) =>
+    navLinks.map((item) => (
+      <NavLink
+        key={item.route}
+        item={item}
+        isDrawer={isDrawer}
+        onClick={isDrawer ? () => setDrawerOpen(false) : undefined}
+        sx={styles.navBarItem}
+      />
+    ))
 
   return (
     <Box sx={styles.navList} component="nav">
       <Logo />
-      {navLinks.map((item) => {
-        const isActive = pathname === item.path
-        return (
-          <Typography
-            key={item.route}
-            component={Link}
-            to={item.path}
-            sx={styles.navBarItem}
+      {isMdUp ? (
+        renderNavLinks()
+      ) : (
+        <>
+          <IconButton
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Open navigation menu"
           >
-            {item.label}
-          </Typography>
-        )
-      })}
-      <IconButton
-        onClick={() => setDrawerOpen(true)}
-        sx={{ display: { xs: 'block', md: 'none' } }}
-      >
-        <MenuIcon />
-      </IconButton>
-      <AppDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        {navLinks.map((item) => {
-          const isActive = pathname === item.path
-          return (
-            <Typography
-              key={item.route}
-              component={Link}
-              to={item.path}
-              onClick={() => setDrawerOpen(false)}
-              sx={styles.navBarItem(isActive, true)}
-            >
-              {item.label}
-            </Typography>
-          )
-        })}
-      </AppDrawer>
+            <MenuIcon />
+          </IconButton>
+          <AppDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+            {renderNavLinks(true)}
+          </AppDrawer>
+        </>
+      )}
     </Box>
   )
 }
