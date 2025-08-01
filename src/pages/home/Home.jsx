@@ -1,13 +1,5 @@
-import Box from '@mui/material/Box'
-import { styles } from '~/pages/home/Home.styles.js'
-import AboutCard from '~/components/about-card/AboutCard'
-
 const Home = () => {
-  return (
-    <Box sx={styles.root}>
-      <AboutCard />
-    </Box>
-  )
+  return <h4>Home</h4>
 }
 
 export default Home
