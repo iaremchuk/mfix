@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
-import { styles } from '../home/Home.styles'
-import AboutCard from '../../components/about-card/AboutCard'
+import { styles } from '~/pages/home/Home.styles.js'
+import AboutCard from '~/components/about-card/AboutCard'
 
 const Home = () => {
   return (
