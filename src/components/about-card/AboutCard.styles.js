@@ -13,7 +13,7 @@ export const styles = {
             sm: '80px 10px',
             xs: '20px 10px'
         },
-        backgroundColor: alpha(palette.companyBlue[400], 0.6),
+        backgroundColor: alpha(palette.backgroundColor, 0.6),
         border: `1px solid ${palette.primary[400]}`
     },
     aboutTitle: {
