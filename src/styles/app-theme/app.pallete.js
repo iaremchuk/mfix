@@ -1,8 +1,9 @@
-import { blueGrey } from '@mui/material/colors'
+import { blueGrey, lightBlue } from '@mui/material/colors'
 
 const palette = {
   primary: blueGrey,
   backgroundColor: '#F7F7F7',
+  companyBlue: lightBlue,
   basic: {
     black: '#000000',
     blue: '#0B8AF8',
@@ -16,7 +17,6 @@ const palette = {
     fruitSalad: '#4CAF50',
     orientalHerbs: '#12A03A',
   },
-  companyBlue: 'rgba(0, 167, 167, 0.2)',
   error: {
     50: '#FFEFF2',
     100: '#FFCFD4',
