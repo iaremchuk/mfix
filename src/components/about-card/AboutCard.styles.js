@@ -1,5 +1,5 @@
-import palette from '../../styles/app-theme/app.palette'
-import appTypography from '../../styles/app-theme/app.typography'
+import palette from '~/styles/app-theme/app.palette'
+import appTypography from '~/styles/app-theme/app.typography'
 import { alpha } from '@mui/material/styles'
 
 export const styles = {
