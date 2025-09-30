@@ -18,8 +18,14 @@ export const styles = {
     },
     aboutTitle: {
         ...appTypography.h4,
+        lineHeight: {
+            xs: '40px'
+        }
     },
     aboutText: {
-        ...appTypography.body3
+        ...appTypography.body3,
+        '&:nth-of-type(2)': {
+            marginTop: '20px',
+        },
     }
 }
