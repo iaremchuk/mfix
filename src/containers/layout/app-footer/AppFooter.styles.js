@@ -12,12 +12,16 @@ export const styles = {
         display: 'flex',
         flexFlow: 'column nowrap',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        textAlign: 'center'
     },
     footerTitle: {
         ...appTypography.body3
     },
     footerText: {
-        ...appTypography.h4
+        ...appTypography.h4,
+        '@media (max-width:600px)': {
+            fontSize: '20px',
+        }
     }
 }
