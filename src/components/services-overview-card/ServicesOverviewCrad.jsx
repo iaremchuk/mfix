@@ -6,7 +6,7 @@ const ServicesOverviewCard = ({ title, description, img }) => {
   return (
     <Box sx={styles.servicesOverviewCardContainer}>
       <Box
-        component="img"
+        component='img'
         src={img.src}
         alt={img.alt}
         sx={styles.servicesOverviewCardImage}
