@@ -14,15 +14,25 @@ const projectImages = Object.entries(images).map(([path, mod], index) => ({
 
 const ViewProjects = () => {
   const [isHovered, setIsHovered] = useState(false)
+  const [pauseCarousel, setPauseCarousel] = useState(false)
+
   return (
     <ContentContainer>
       <Box
         sx={styles.viewProjectsContainer}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseLeave={() => {
+          setIsHovered(false)
+          setPauseCarousel(false)
+        }}
         position='relative'
       >
-        <AppCarousel width='100%' height='100%' autoPlay interval={2500}>
+        <AppCarousel
+          width='100%'
+          height='100%'
+          autoPlay={!pauseCarousel}
+          interval={2500}
+        >
           {projectImages.map((image, index) => (
             <Box
               key={index}
@@ -35,7 +45,11 @@ const ViewProjects = () => {
           ))}
         </AppCarousel>
         {isHovered && (
-          <Box sx={styles.viewMoreProjectsBtnContainer}>
+          <Box
+            sx={styles.viewMoreProjectsBtnContainer}
+            onMouseEnter={() => setPauseCarousel(true)}
+            onMouseLeave={() => setPauseCarousel(false)}
+          >
             <ViewButton />
           </Box>
         )}
