@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { styles } from '~/components/about-card/AboutCard.styles'
 import ContentContainer from '~/containers/content-container/ContentContainer'
+
 const AboutCard = () => {
   return (
     <ContentContainer>

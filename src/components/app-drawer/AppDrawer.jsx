@@ -16,7 +16,7 @@ const AppDrawer = ({
     <Drawer anchor={anchor} open={open} onClose={onClose}>
       <Box sx={styles.drawerContainer(width)}>
         <Box sx={styles.closeButtonContainer}>
-          <IconButton onClick={onClose} aria-label="Close drawer">
+          <IconButton onClick={onClose} aria-label='Close drawer'>
             <CloseIcon />
           </IconButton>
         </Box>
