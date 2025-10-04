@@ -9,9 +9,6 @@ export const styles = {
         backgroundAttachment: 'fixed',
         minHeight: '100vh',
         width: '100%',
-        paddingTop: {
-            xs: '20px',
-            sm: '50px'
-        }
+        paddingTop: '50px'
     },
 }
