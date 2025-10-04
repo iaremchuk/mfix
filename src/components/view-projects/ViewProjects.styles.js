@@ -1,10 +1,11 @@
-import palette from '../../styles/app-theme/app.palette'
+import palette from '~/styles/app-theme/app.palette'
 
 export const styles = {
     viewProjectsContainer: {
         height: {
+            xs: '400px',
             md: '500px',
-            xs: '400px'
+            lg: '600px'
         },
         border: `1px solid ${palette.primary[900]}`,
         marginTop: '50px'

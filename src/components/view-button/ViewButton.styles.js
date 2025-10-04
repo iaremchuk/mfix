@@ -1,4 +1,4 @@
-import palette from '../../styles/app-theme/app.palette'
+import palette from '~/styles/app-theme/app.palette'
 
 export const styles = {
   viewButton: {
@@ -9,6 +9,9 @@ export const styles = {
     padding: {
       md: '10px 20px',
       xs: '5px 5px'
+    },
+    width: {
+      xs: '200px'
     },
     textTransform: 'none',
     '&:hover': {
