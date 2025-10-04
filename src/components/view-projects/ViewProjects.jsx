@@ -20,16 +20,16 @@ const ViewProjects = () => {
         sx={styles.viewProjectsContainer}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        position="relative"
+        position='relative'
       >
-        <AppCarousel width="100%" height="100%" autoPlay interval={2500}>
+        <AppCarousel width='100%' height='100%' autoPlay interval={2500}>
           {projectImages.map((image, index) => (
             <Box
               key={index}
-              component="img"
+              component='img'
               src={image.src}
               alt={image.alt}
-              loading="lazy"
+              loading='lazy'
               sx={styles.viewProjectsImage}
             />
           ))}
