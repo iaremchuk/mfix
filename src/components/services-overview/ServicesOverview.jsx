@@ -3,9 +3,9 @@ import { Box } from '@mui/material'
 import ContentContainer from '~/containers/content-container/ContentContainer'
 import ServicesOverviewCard from '~/components/services-overview-card/ServicesOverviewCrad'
 import { styles } from '~/components/services-overview/ServicesOverview.styles.js'
-import img1 from '~/assets/1.jpg'
-import img2 from '~/assets/2.jpg'
-import img3 from '~/assets/3.jpg'
+import img1 from '~/assets/projects/1.jpg'
+import img2 from '~/assets/projects/2.jpg'
+import img3 from '~/assets/projects/3.jpg'
 
 const ServicesOverview = () => {
   const cards = [
