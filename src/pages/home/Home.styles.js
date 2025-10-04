@@ -1,4 +1,4 @@
-import three from '../../assets/3.jpg'
+import three from '~/assets/projects/3.jpg'
 
 export const styles = {
     root: {

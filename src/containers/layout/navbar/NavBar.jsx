@@ -29,7 +29,7 @@ const Navbar = () => {
     ))
 
   return (
-    <Box sx={styles.navList} component="nav">
+    <Box sx={styles.navList} component='nav'>
       <Logo />
       {isMdUp ? (
         renderNavLinks()
@@ -37,7 +37,7 @@ const Navbar = () => {
         <>
           <IconButton
             onClick={() => setDrawerOpen(true)}
-            aria-label="Open navigation menu"
+            aria-label='Open navigation menu'
           >
             <MenuIcon />
           </IconButton>

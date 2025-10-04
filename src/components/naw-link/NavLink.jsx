@@ -14,7 +14,7 @@ const NavLink = ({ item, onClick, sx }) => {
       to={item.path}
       onClick={onClick}
       sx={linkStyle}
-      role="navigation"
+      role='navigation'
     >
       {item.label}
     </Typography>
