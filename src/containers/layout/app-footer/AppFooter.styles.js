@@ -4,8 +4,8 @@ import appTypography from '~/styles/app-theme/app.typography'
 export const styles = {
     footer: {
         height: {
-            xs: '150px',
-            md: '200px'
+            md: '200px',
+            xs: '150px'
         },
         color: 'basic.white',
         backgroundColor: palette.basic.black,
@@ -20,8 +20,8 @@ export const styles = {
     },
     footerText: {
         ...appTypography.h4,
-        fontSize: {
-            xs: '20px'
+        '@media (max-width:600px)': {
+            fontSize: '20px',
         }
     }
 }
