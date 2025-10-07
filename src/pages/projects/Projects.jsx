@@ -1,5 +1,12 @@
+import Box from '@mui/material/Box'
+import ProjectsHeader from '~/components/projects-header/ProjectsHeader'
+
 const Projects = () => {
-  return <h4>Projects</h4>
+  return (
+    <Box>
+      <ProjectsHeader />
+    </Box>
+  )
 }
 
 export default Projects
