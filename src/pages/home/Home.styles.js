@@ -1,8 +1,8 @@
-import three from '~/assets/projects/3.jpg'
+import backgroundImageHome from '~/assets/projects/wembley-hill-road/1.jpg'
 
 export const styles = {
     root: {
-        backgroundImage: `url(${three})`,
+        backgroundImage: `url(${backgroundImageHome})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

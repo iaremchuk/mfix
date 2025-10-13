@@ -5,7 +5,7 @@ import ContentContainer from '~/containers/content-container/ContentContainer'
 import ViewButton from '~/components/view-button/ViewButton'
 import { styles } from '~/components/view-projects/ViewProjects.styles.js'
 
-const images = import.meta.glob('~/assets/projects/*.jpg', { eager: true })
+const images = import.meta.glob('~/assets/projects/**/*.jpg', { eager: true })
 
 const projectImages = Object.entries(images).map(([path, mod], index) => ({
   src: mod.default,

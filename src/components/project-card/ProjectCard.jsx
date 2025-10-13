@@ -1,17 +1,37 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { styles } from '~/components/project-card/ProjectCard.styles.js'
-import ContentContainer from '~/containers/content-container/ContentContainer'
+import AppCarousel from '~/components/app-carousel/AppCarousel'
 
-const ProjectCard = () => {
+const ProjectCard = ({ title, description, value, location, imgSlides }) => {
   return (
-    <ContentContainer>
-      <Box sx={styles.aboutContainer}>
-        <Typography sx={styles.aboutTitle}>About M-FIX Consruction</Typography>
-        <Typography sx={styles.aboutText}>Delivering drylining services</Typography>
-        <Typography sx={styles.aboutText}>for comercial clients since 2019</Typography>
+    <Box sx={styles.projectCardContainer}>
+      <Box sx={styles.projectCardContentContainer}>
+        <Typography sx={styles.projectCardHeader}>{title}</Typography>
+        <Typography sx={styles.projectCardDescription}>
+          {description}
+        </Typography>
+        <Typography sx={styles.projectCardDescription}>{value}</Typography>
+        <Typography sx={styles.projectCardDescription}>{location}</Typography>
       </Box>
-    </ContentContainer>
+      <Box sx={styles.projectCardSlidesContainer}>
+        <AppCarousel width="100%" height="100%">
+          {imgSlides?.length ? (
+            imgSlides.map((image, index) => (
+              <Box
+                key={index}
+                component="img"
+                src={image.src}
+                alt={image.alt}
+                sx={styles.projectCardImage}
+              />
+            ))
+          ) : (
+            <Typography sx={styles.noImageText}>Images to be coming</Typography>
+          )}
+        </AppCarousel>
+      </Box>
+    </Box>
   )
 }
 
