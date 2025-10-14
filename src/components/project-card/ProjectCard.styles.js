@@ -8,7 +8,6 @@ export const styles = {
             sm: 'row'
         },
         justifyContent: 'space-between',
-        border: '2px solid red',
         marginTop: '30px',
         '&:last-of-type': {
             marginBottom: '30px'
@@ -22,8 +21,7 @@ export const styles = {
         width: {
             xs: '100%',
             sm: '35%'
-        },
-        border: '1px solid green'
+        }
     },
     projectCardSlidesContainer: {
         width: {
