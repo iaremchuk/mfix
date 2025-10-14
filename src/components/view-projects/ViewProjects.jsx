@@ -32,6 +32,7 @@ const ViewProjects = () => {
           height='100%'
           autoPlay={!pauseCarousel}
           interval={2500}
+          showButtons={false}
         >
           {projectImages.map((image, index) => (
             <Box

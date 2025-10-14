@@ -1,4 +1,3 @@
-import palette from '~/styles/app-theme/app.palette'
 import appTypography from '~/styles/app-theme/app.typography'
 
 export const styles = {
@@ -15,9 +14,9 @@ export const styles = {
             marginBottom: '30px'
         },
         height: {
-            xs: 'auto',   // small screens
-            sm: '400px',  // larger screens
-          },
+            xs: 'auto',
+            sm: '400px'
+        }
     },
     projectCardContentContainer: {
         width: {
@@ -32,9 +31,9 @@ export const styles = {
             sm: '65%'
         },
         height: {
-            xs: '250px',  // small screen height
-            sm: '100%',   // fill parent
-          },
+            xs: '250px',
+            sm: '100%'
+        }
     },
     projectCardImage: {
         width: '100%',
@@ -54,35 +53,13 @@ export const styles = {
     projectCardDescription: {
         ...appTypography.body3,
         '@media (max-width:600px)': {
-            ...appTypography.body1,
+            ...appTypography.body1
         },
         '&:nth-of-type(2)': {
             marginTop: {
                 xs: '10px',
                 sm: '30px'
             }
-        },
-    },
-    servicesOverviewContainer: {
-        backgroundColor: palette.backgroundColor,
-        marginTop: '50px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '30px 0 40px'
-    },
-    servicesOverviewHeader: {
-        ...appTypography.h3,
-        textTransform: 'uppercase'
-    },
-    servicesOverviewCardsContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: 2,
-        flexDirection: {
-            xs: 'column',
-            sm: 'row'
         }
     }
 }
