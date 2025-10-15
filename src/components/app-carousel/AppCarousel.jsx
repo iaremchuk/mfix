@@ -10,7 +10,7 @@ const AppCarousel = ({
   width,
   height,
   autoPlay = true,
-  interval = 2500,
+  interval = 2000,
   showButtons = false,
 }) => {
   const slides = images
@@ -28,17 +28,16 @@ const AppCarousel = ({
 
   const total = slides.length
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
-    if (!autoPlay || isHovered || total <= 1) return
+    if (!autoPlay || total <= 1) return
 
     const timer = setInterval(
       () => setActiveIndex((prev) => (prev + 1) % total),
       Number(interval) || 2500
     )
     return () => clearInterval(timer)
-  }, [autoPlay, isHovered, interval, total])
+  }, [autoPlay, interval, total])
 
   useEffect(() => {
     if (activeIndex >= total) setActiveIndex(0)
@@ -48,11 +47,7 @@ const AppCarousel = ({
   const prevSlide = () => setActiveIndex((prev) => (prev - 1 + total) % total)
 
   return (
-    <Box
-      sx={{ ...styles.carouselContainer, width, height }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <Box sx={{ ...styles.carouselContainer, width, height }}>
       {slides.map((child, index) => (
         <Box
           key={child?.key ?? index}

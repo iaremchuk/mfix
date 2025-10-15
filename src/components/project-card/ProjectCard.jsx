@@ -11,16 +11,15 @@ const ProjectCard = ({ title, description, value, location, imgSlides }) => {
         <Typography sx={styles.projectCardDescription}>
           {description}
         </Typography>
-        <Typography sx={styles.projectCardDescription}>{value}</Typography>
         <Typography sx={styles.projectCardDescription}>{location}</Typography>
       </Box>
       <Box sx={styles.projectCardSlidesContainer}>
-        <AppCarousel width="100%" height="100%" showButtons={true}>
+        <AppCarousel width='100%' height='100%' showButtons={true}>
           {imgSlides?.length ? (
             imgSlides.map((image, index) => (
               <Box
                 key={index}
-                component="img"
+                component='img'
                 src={image.src}
                 alt={image.alt}
                 sx={styles.projectCardImage}
