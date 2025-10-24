@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography'
 import { styles } from '~/components/project-card/ProjectCard.styles.js'
 import AppCarousel from '~/components/app-carousel/AppCarousel'
 
-const ProjectCard = ({ title, description, value, location, imgSlides }) => {
+const ProjectCard = ({ title, description, location, imgSlides }) => {
   return (
     <Box sx={styles.projectCardContainer}>
       <Box sx={styles.projectCardContentContainer}>

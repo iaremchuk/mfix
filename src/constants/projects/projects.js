@@ -3,6 +3,12 @@ import { projectImages } from '~/constants/projects/projectImages'
 export const projects = [
     {
         title: "New build apartments",
+        description: "272 new homes",
+        location: "Ashley Road Depot Site, N17 9DP",
+        folder: 'ashley-road-depot'
+    },
+    {
+        title: "New build apartments",
         description: "254 units (2 & 3 bedroom apartments)",
         location: "Dylon Riverside, SE26 5FH",
         folder: 'dylon-riverside'
@@ -24,13 +30,7 @@ export const projects = [
         description: "310 units (2 & 3 bedroom apartments)",
         location: "Ashley Gardens 1, N17 9QY",
         folder: 'ashley-gardens'
-    },
-    {
-        title: "New build apartments",
-        description: "272 new homes",
-        location: "Ashley Road Depot Site, N17 9DP",
-        folder: 'ashley-road-depot'
-    },
+    }
 ].map(project => ({
     ...project,
     imgSlides: projectImages[project.folder] || []

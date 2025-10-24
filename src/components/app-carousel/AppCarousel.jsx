@@ -10,7 +10,7 @@ const AppCarousel = ({
   width,
   height,
   autoPlay = true,
-  interval = 2000,
+  interval = 2500,
   showButtons = false,
 }) => {
   const slides = images
