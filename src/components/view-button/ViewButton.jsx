@@ -8,7 +8,7 @@ const ViewButton = () => {
 
   return (
     <Button onClick={() => navigate('/projects')} sx={styles.viewButton}>
-      View More Projects <ArrowForwardIcon />
+      View Our Projects <ArrowForwardIcon />
     </Button>
   )
 }

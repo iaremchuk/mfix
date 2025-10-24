@@ -1,37 +1,74 @@
 import { useEffect, useState } from 'react'
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import { styles } from '~/components/app-carousel/AppCarousel.styles.js'
 
 const AppCarousel = ({
   children,
+  images,
   width,
   height,
   autoPlay = true,
-  interval,
+  interval = 2500,
+  showButtons = false,
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
-  const total = children.length
+  const slides = images
+    ? images.map((img, index) => (
+        <Box
+          component='img'
+          key={img.src ?? index}
+          src={img.src}
+          alt={img.alt}
+        />
+      ))
+    : Array.isArray(children)
+      ? children
+      : [children]
 
-  const handleNext = () => setActiveIndex((prev) => (prev + 1) % total)
+  const total = slides.length
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
-    if (!autoPlay || isHovered) return
-    const timer = setInterval(handleNext, interval)
+    if (!autoPlay || total <= 1) return
+
+    const timer = setInterval(
+      () => setActiveIndex((prev) => (prev + 1) % total),
+      Number(interval) || 2500
+    )
     return () => clearInterval(timer)
-  }, [autoPlay, interval, isHovered])
+  }, [autoPlay, interval, total])
+
+  useEffect(() => {
+    if (activeIndex >= total) setActiveIndex(0)
+  }, [activeIndex, total])
+
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % total)
+  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + total) % total)
 
   return (
-    <Box
-      sx={{ ...styles.carouselContainer, width, height }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {children.map((child, index) => (
-        <Box key={index} sx={styles.carouselSlide(activeIndex === index)}>
+    <Box sx={{ ...styles.carouselContainer, width, height }}>
+      {slides.map((child, index) => (
+        <Box
+          key={child?.key ?? index}
+          sx={styles.carouselSlide(activeIndex === index)}
+        >
           {child}
         </Box>
       ))}
+      {showButtons && (
+        <>
+          <Button onClick={prevSlide} sx={styles.carouselButton('left')}>
+            <ArrowLeftIcon sx={styles.carouselButtonIcon} />
+          </Button>
+          <Button onClick={nextSlide} sx={styles.carouselButton('right')}>
+            <ArrowRightIcon sx={styles.carouselButtonIcon} />
+          </Button>
+        </>
+      )}
+      <Box sx={styles.slideNumber}>
+        {activeIndex + 1} / {total}
+      </Box>
     </Box>
   )
 }

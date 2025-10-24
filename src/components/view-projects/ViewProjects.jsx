@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import { Box } from '@mui/material'
 import AppCarousel from '~/components/app-carousel/AppCarousel'
 import ContentContainer from '~/containers/content-container/ContentContainer'
-import ViewButton from '~/components/view-button/ViewButton'
 import { styles } from '~/components/view-projects/ViewProjects.styles.js'
 
-const images = import.meta.glob('~/assets/projects/*.jpg', { eager: true })
+const images = import.meta.glob('~/assets/projects/**/*.jpg', { eager: true })
 
 const projectImages = Object.entries(images).map(([path, mod], index) => ({
   src: mod.default,
@@ -13,25 +11,14 @@ const projectImages = Object.entries(images).map(([path, mod], index) => ({
 }))
 
 const ViewProjects = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [pauseCarousel, setPauseCarousel] = useState(false)
-
   return (
     <ContentContainer>
-      <Box
-        sx={styles.viewProjectsContainer}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false)
-          setPauseCarousel(false)
-        }}
-        position='relative'
-      >
+      <Box sx={styles.viewProjectsContainer} position="relative">
         <AppCarousel
           width='100%'
           height='100%'
-          autoPlay={!pauseCarousel}
-          interval={2500}
+          interval={2000}
+          showButtons={false}
         >
           {projectImages.map((image, index) => (
             <Box
@@ -44,15 +31,6 @@ const ViewProjects = () => {
             />
           ))}
         </AppCarousel>
-        {isHovered && (
-          <Box
-            sx={styles.viewMoreProjectsBtnContainer}
-            onMouseEnter={() => setPauseCarousel(true)}
-            onMouseLeave={() => setPauseCarousel(false)}
-          >
-            <ViewButton />
-          </Box>
-        )}
       </Box>
     </ContentContainer>
   )
