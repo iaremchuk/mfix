@@ -14,13 +14,13 @@ export const styles = {
         },
         height: {
             xs: 'auto',
-            sm: '400px'
+            sm: '450px'
         }
     },
     projectCardContentContainer: {
         width: {
             xs: '100%',
-            sm: '35%'
+            sm: '30%'
         }
     },
     projectCardSlidesContainer: {
