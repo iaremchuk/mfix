@@ -68,7 +68,7 @@ const appTypography = {
         lineHeight: '20px',
         letterSpacing: '0.0025em'
     },
-    body3: {
+    body4: {
         fontWeight: 400,
         fontSize: '16px',
         lineHeight: '25px',
