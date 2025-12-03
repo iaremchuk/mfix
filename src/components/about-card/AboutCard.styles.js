@@ -6,7 +6,7 @@ export const styles = {
     aboutContainer: {
         height: {
             md: '400px',
-            xs: '300px'
+            xs: '310px'
         },
         padding: {
             md: '100px 10px',
@@ -25,7 +25,12 @@ export const styles = {
     aboutText: {
         ...appTypography.body3,
         '&:nth-of-type(2)': {
-            marginTop: '20px',
+            marginTop: '20px'
+        },
+        '&:nth-of-type(3)': {
+            marginBottom: {
+                sm: '40px'
+            }
         },
     }
 }
