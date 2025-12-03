@@ -1,8 +1,13 @@
 import palette from '~/styles/app-theme/app.palette'
+import appTypography from '~/styles/app-theme/app.typography'
 
 export const styles = {
   viewButton: {
-    backgroundColor: 'basic.white',
+    fontSize: {
+      xs: '16px',
+      md: appTypography.body3.fontSize
+    },
+    backgroundColor: palette.companyBlue[400],
     color: `${palette.primary[900]}`,
     borderRadius: 0,
     border: '1px solid black',
@@ -11,11 +16,12 @@ export const styles = {
       xs: '5px 5px'
     },
     width: {
-      xs: '200px'
+      xs: '200px',
+      md: '300px'
     },
     textTransform: 'none',
     '&:hover': {
-      backgroundColor: palette.companyBlue[400],
+      backgroundColor: 'basic.white'
     }
   }
 }

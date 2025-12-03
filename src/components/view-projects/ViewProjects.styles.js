@@ -7,8 +7,7 @@ export const styles = {
             md: '500px',
             lg: '600px'
         },
-        border: `1px solid ${palette.primary[900]}`,
-        marginTop: '50px'
+        border: `1px solid ${palette.primary[900]}`
     },
     viewProjectsImage: {
         width: '100%',
