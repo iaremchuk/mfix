@@ -1,5 +1,12 @@
+import ContactForm from '~/components/contact-form/ContactForm'
+import Box from '@mui/material/Box'
+import {styles} from '~/pages/contacts/Contacts.styles.js'
 const Contacts = () => {
-  return <h4>Contacts</h4>
+  return (
+    <Box sx={styles.root}>
+      <ContactForm />
+    </Box>
+  )
 }
 
 export default Contacts
