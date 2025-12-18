@@ -11,4 +11,13 @@ export const styles = {
         width: '100%',
         paddingTop: '50px'
     },
+    contactsContainer: {
+        position: 'relative',
+        minHeight: '70vh'
+    },
+    contactUsContainer: {
+        position: 'absolute',
+        bottom: '10px',
+        width: '100%'
+    }
 }

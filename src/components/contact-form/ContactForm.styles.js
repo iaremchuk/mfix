@@ -14,6 +14,7 @@ const textFieldBorderStyle = {
 export const styles = {
     contactFormBlock: {
         backgroundColor: palette.backgroundColor,
+        marginTop: '20px',
         padding: {
             xs: '20px',
             md: '30px',
@@ -38,7 +39,6 @@ export const styles = {
     contactFormInitialsContainer: {
         display: 'flex',
         justifyContent: 'space-between'
-
     },
     contactFormInitials: {
         width: '49%',
