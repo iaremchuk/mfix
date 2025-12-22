@@ -19,7 +19,7 @@ const ViewProjects = () => {
         <AppCarousel
           width="100%"
           height="100%"
-          interval={2000}
+          interval={2500}
           showButtons={false}
         >
           {projectImages.map((image, index) => (

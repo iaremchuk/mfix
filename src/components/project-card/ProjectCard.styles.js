@@ -1,32 +1,37 @@
 import appTypography from '~/styles/app-theme/app.typography'
+import palette from '~/styles/app-theme/app.palette'
 
 export const styles = {
-    projectCardContainer: {
+    projectCardContainer: (isEven) => ({
         display: 'flex',
         flexDirection: {
             xs: 'column',
-            sm: 'row'
+            sm: isEven ? 'row-reverse' : 'row'
         },
         justifyContent: 'space-between',
-        marginTop: '30px',
+        marginTop: '50px',
         '&:last-of-type': {
             marginBottom: '30px'
         },
         height: {
             xs: 'auto',
-            sm: '450px'
+            sm: '450px',
         }
-    },
+    }),
     projectCardContentContainer: {
         width: {
             xs: '100%',
-            sm: '30%'
+            sm: '35%'
+        },
+        height: {
+            xs: 'auto',
+            sm: '100%'
         }
     },
     projectCardSlidesContainer: {
         width: {
             xs: '100%',
-            sm: '65%'
+            sm: '60%'
         },
         height: {
             xs: '250px',

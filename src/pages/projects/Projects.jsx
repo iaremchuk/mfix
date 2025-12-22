@@ -11,7 +11,7 @@ const Projects = () => {
       <ContentContainer>
         <Box>
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={index} index={index} {...project} />
           ))}
         </Box>
       </ContentContainer>
