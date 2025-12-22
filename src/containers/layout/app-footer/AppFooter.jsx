@@ -5,8 +5,16 @@ import { styles } from '~/containers/layout/app-footer/AppFooter.styles.js'
 const AppFooter = () => {
   return (
     <Box sx={styles.footer}>
-      <Typography sx={styles.footerTitle}>To discuss a project or find out more email: </Typography>
-      <Typography sx={styles.footerText}>mfixconstruction@gmail.com</Typography>
+      <Typography sx={styles.footerTitle}>
+        To discuss a project or find out more email:{' '}
+      </Typography>
+      <Typography
+        component='a'
+        href='mailto:mfixconstruction@gmail.com'
+        sx={styles.footerText}
+      >
+        mfixconstruction@gmail.com
+      </Typography>
     </Box>
   )
 }

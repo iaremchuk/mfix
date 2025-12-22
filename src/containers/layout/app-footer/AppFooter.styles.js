@@ -22,6 +22,8 @@ export const styles = {
         ...appTypography.h4,
         '@media (max-width:600px)': {
             fontSize: '20px',
-        }
+        },
+        textDecoration: 'none',
+        color: 'inherit'
     }
 }
