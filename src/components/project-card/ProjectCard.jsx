@@ -12,7 +12,6 @@ const ProjectCard = ({
   index,
 }) => {
   const isEven = index % 2 === 0
-  console.log(isEven)
 
   return (
     <Box sx={styles.projectCardContainer(isEven)}>
@@ -25,12 +24,17 @@ const ProjectCard = ({
         <Typography sx={styles.projectCardDescription}>{work}</Typography>
       </Box>
       <Box sx={styles.projectCardSlidesContainer}>
-        <AppCarousel width="100%" height="100%" showButtons={true}>
+        <AppCarousel
+          width='100%'
+          height='100%'
+          showButtons={true}
+          pauseOnHover={true}
+        >
           {imgSlides?.length ? (
             imgSlides.map((image, index) => (
               <Box
                 key={index}
-                component="img"
+                component='img'
                 src={image.src}
                 alt={image.alt}
                 sx={styles.projectCardImage}

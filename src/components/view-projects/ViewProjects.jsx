@@ -15,20 +15,21 @@ const ViewProjects = () => {
   return (
     <ContentContainer>
       <ViewButton sx={{ marginTop: '50px' }} />
-      <Box sx={styles.viewProjectsContainer} position="relative">
+      <Box sx={styles.viewProjectsContainer} position='relative'>
         <AppCarousel
-          width="100%"
-          height="100%"
-          interval={2500}
+          width='100%'
+          height='100%'
+          interval={3000}
           showButtons={false}
+          pauseOnHover={false}
         >
           {projectImages.map((image, index) => (
             <Box
               key={index}
-              component="img"
+              component='img'
               src={image.src}
               alt={image.alt}
-              loading="lazy"
+              loading='lazy'
               sx={styles.viewProjectsImage}
             />
           ))}
