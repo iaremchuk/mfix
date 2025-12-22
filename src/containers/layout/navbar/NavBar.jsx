@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import { Link } from 'react-router-dom'
 
 import { navLinks } from '~/router/constants/navLinks.js'
 import Logo from '~/containers/logo/Logo'
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const theme = useTheme()
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'))
+  const homeLink = navLinks.find((link) => link.route === 'home')
   const renderNavLinks = (isDrawer = false) =>
     navLinks.map((item) => (
       <NavLink
@@ -30,7 +32,10 @@ const Navbar = () => {
 
   return (
     <Box sx={styles.navList} component='nav'>
-      <Logo />
+      <Box component={Link} to={homeLink.path}>
+        <Logo />
+      </Box>
+
       {isMdUp ? (
         renderNavLinks()
       ) : (
