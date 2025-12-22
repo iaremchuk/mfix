@@ -13,7 +13,11 @@ const ContactUs = () => {
             If you have a project or would like to find out more about us,
             please get in touch.
           </Typography>
-          <Typography sx={styles.contactUsEmail}>
+          <Typography
+            component='a'
+            href='mailto:mfixconstruction@gmail.com'
+            sx={styles.contactUsEmail}
+          >
             mfixconstruction@gmail.com
           </Typography>
         </Box>

@@ -42,6 +42,8 @@ export const styles = {
             xs: '20px',
             lg: '30px'
 
-        }
+        },
+        textDecoration: 'none',
+        color: 'inherit'
     }
 }
