@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Box, Button } from '@mui/material'
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
@@ -10,7 +10,8 @@ const AppCarousel = ({
   width,
   height,
   autoPlay = true,
-  interval = 2500,
+  interval = 3000,
+  pauseOnHover = true,
   showButtons = false,
 }) => {
   const slides = images
@@ -28,16 +29,18 @@ const AppCarousel = ({
 
   const total = slides.length
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const intervalRef = useRef()
 
   useEffect(() => {
-    if (!autoPlay || total <= 1) return
+    if (!autoPlay || total <= 1 || (pauseOnHover && isHovered)) return
 
-    const timer = setInterval(
+    intervalRef.current = setInterval(
       () => setActiveIndex((prev) => (prev + 1) % total),
-      Number(interval) || 2500
+      Number(interval) || 3000
     )
-    return () => clearInterval(timer)
-  }, [autoPlay, interval, total])
+    return () => clearInterval(intervalRef.current)
+  }, [autoPlay, interval, total, isHovered, pauseOnHover])
 
   useEffect(() => {
     if (activeIndex >= total) setActiveIndex(0)
@@ -47,7 +50,11 @@ const AppCarousel = ({
   const prevSlide = () => setActiveIndex((prev) => (prev - 1 + total) % total)
 
   return (
-    <Box sx={{ ...styles.carouselContainer, width, height }}>
+    <Box
+      sx={{ ...styles.carouselContainer, width, height }}
+      onMouseEnter={() => pauseOnHover && setIsHovered(true)}
+      onMouseLeave={() => pauseOnHover && setIsHovered(false)}
+    >
       {slides.map((child, index) => (
         <Box
           key={child?.key ?? index}
