@@ -7,6 +7,6 @@ export const styles = {
       lg: '1200px',
       xl: '1400px',
     },
-    margin: 'auto',
-  },
+    margin: 'auto'
+  }
 }
