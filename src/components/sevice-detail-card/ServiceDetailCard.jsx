@@ -10,9 +10,9 @@ const ServiceDetailCard = ({ title, description, image }) => {
       <Box sx={styles.serviceDetailBackgroundImage(image)} />
       <ContentContainer>
         <Box
-          component="img"
+          component='img'
           src={logoImage}
-          alt="logo"
+          alt='logo'
           sx={styles.serviceDetailCardImage}
         />
         <Typography sx={styles.serviceDetailCardHeader}>{title}</Typography>
