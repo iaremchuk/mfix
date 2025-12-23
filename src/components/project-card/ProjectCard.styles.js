@@ -1,5 +1,4 @@
 import appTypography from '~/styles/app-theme/app.typography'
-import palette from '~/styles/app-theme/app.palette'
 
 export const styles = {
     projectCardContainer: (isEven) => ({
