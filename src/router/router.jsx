@@ -11,11 +11,11 @@ import Projects from '~/pages/projects/Projects'
 import Contacts from '~/pages/contacts/Contacts'
 
 const routerConfig = (
-  <Route path="/" element={<App />}>
+  <Route path='/' element={<App />}>
     <Route index element={<Home />} />
-    <Route path="services" element={<Services />} />
-    <Route path="projects" element={<Projects />} />
-    <Route path="contacts" element={<Contacts />} />
+    <Route path='services' element={<Services />} />
+    <Route path='projects' element={<Projects />} />
+    <Route path='contacts' element={<Contacts />} />
   </Route>
 )
 

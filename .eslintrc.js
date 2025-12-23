@@ -7,7 +7,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -16,16 +16,18 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     'prettier/prettier': 'error',
-    // Add any custom rules here
+
     'no-unused-vars': ['warn', { varsIgnorePattern: '^[A-Z_]' }],
-    'no-console': ['error', { allow: ['warn', 'error'] }]
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
-};
+}

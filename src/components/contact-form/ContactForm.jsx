@@ -14,7 +14,7 @@ const ContactForm = () => {
   return (
     <Box sx={styles.contactFormBlock}>
       <Box
-        component="form"
+        component='form'
         ref={formRef}
         onSubmit={sendEmail}
         sx={styles.contactFormContainer}
@@ -22,38 +22,46 @@ const ContactForm = () => {
         <Typography sx={styles.contactFormTitle}>Contact Us</Typography>
         <Box sx={styles.contactFormInitialsContainer}>
           <TextField
-            label="First Name"
-            name="firstName"
-            variant="outlined"
+            id='firstName'
+            label='First Name'
+            name='firstName'
+            variant='outlined'
             sx={styles.contactFormInitials}
             required
+            autoComplete='given-name'
           />
           <TextField
-            label="Last Name"
-            name="lastName"
-            variant="outlined"
+            id='lastName'
+            label='Last Name'
+            name='lastName'
+            variant='outlined'
             sx={styles.contactFormInitials}
             required
+            autoComplete='family-name'
           />
         </Box>
         <TextField
-          label="Email"
-          name="email"
-          type="email"
-          variant="outlined"
+          id='email'
+          label='Email'
+          name='email'
+          type='email'
+          variant='outlined'
           sx={styles.contactFormTextField}
           required
+          autoComplete='email'
         />
         <TextField
-          label="Message"
-          name="message"
+          id='message'
+          label='Message'
+          name='message'
           multiline
           rows={6}
-          variant="outlined"
+          variant='outlined'
           sx={styles.contactFormTextField}
           required
+          autoComplete='off'
         />
-        <Button variant="contained" sx={styles.contactFormButton} type="submit">
+        <Button variant='contained' sx={styles.contactFormButton} type='submit'>
           Send
         </Button>
       </Box>
