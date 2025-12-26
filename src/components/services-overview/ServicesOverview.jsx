@@ -5,7 +5,7 @@ import ServicesOverviewCard from '~/components/services-overview-card/ServicesOv
 import { styles } from '~/components/services-overview/ServicesOverview.styles.js'
 import img1 from '~/assets/services/services-overview/1.avif'
 import img2 from '~/assets/services/services-overview/2.avif'
-import img3 from '~/assets/services/services-overview/3.avif'
+import img3 from '~/assets/services/services-overview/3.png'
 
 const ServicesOverview = () => {
   const cards = [
