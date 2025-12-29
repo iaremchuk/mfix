@@ -1,0 +1,83 @@
+import { useEffect, useState, useRef } from 'react'
+import { Box, Button } from '@mui/material'
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+import { styles } from '~/components/app-carousel/AppCarousel.styles.js'
+
+const AppCarousel = ({
+  children,
+  images,
+  width,
+  height,
+  autoPlay = true,
+  interval = 3000,
+  pauseOnHover = true,
+  showButtons = false,
+}) => {
+  const slides = images
+    ? images.map((img, index) => (
+        <Box
+          component='img'
+          key={img.src ?? index}
+          src={img.src}
+          alt={img.alt}
+        />
+      ))
+    : Array.isArray(children)
+      ? children
+      : [children]
+
+  const total = slides.length
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const intervalRef = useRef()
+
+  useEffect(() => {
+    if (!autoPlay || total <= 1 || (pauseOnHover && isHovered)) return
+
+    intervalRef.current = setInterval(
+      () => setActiveIndex((prev) => (prev + 1) % total),
+      Number(interval) || 3000
+    )
+    return () => clearInterval(intervalRef.current)
+  }, [autoPlay, interval, total, isHovered, pauseOnHover])
+
+  useEffect(() => {
+    if (activeIndex >= total) setActiveIndex(0)
+  }, [activeIndex, total])
+
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % total)
+  const prevSlide = () => setActiveIndex((prev) => (prev - 1 + total) % total)
+
+  return (
+    <Box
+      sx={{ ...styles.carouselContainer, width, height }}
+      onMouseEnter={() => pauseOnHover && setIsHovered(true)}
+      onMouseLeave={() => pauseOnHover && setIsHovered(false)}
+    >
+      {slides.map((child, index) => (
+        <Box
+          key={child?.key ?? index}
+          sx={styles.carouselSlide(activeIndex === index)}
+        >
+          {child}
+        </Box>
+      ))}
+      {showButtons && (
+        <>
+          <Button onClick={prevSlide} sx={styles.carouselButton('left')}>
+            <ArrowLeftIcon sx={styles.carouselButtonIcon} />
+          </Button>
+          <Button onClick={nextSlide} sx={styles.carouselButton('right')}>
+            <ArrowRightIcon sx={styles.carouselButtonIcon} />
+          </Button>
+        </>
+      )}
+      <Box sx={styles.slideNumber}>
+        {activeIndex + 1} / {total}
+      </Box>
+    </Box>
+  )
+}
+
+export default AppCarousel
