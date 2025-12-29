@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import ContentContainer from '~/containers/content-container/ContentContainer'
 import { styles } from '~/components/sevice-detail-card/ServiceDetailCard.styles.js'
-import logoImage from '~/assets/logo.JPG'
+import logoImage from '~/assets/logo.png'
 
 const ServiceDetailCard = ({ title, description, image }) => {
   return (
